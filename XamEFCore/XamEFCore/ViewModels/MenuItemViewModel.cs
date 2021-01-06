@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XamEFCore.Views;
+using XamEFCore.Models;
+using XamEFCore.Services;
 
 namespace XamEFCore.ViewModels
 {
@@ -29,12 +31,26 @@ namespace XamEFCore.ViewModels
         #region Methods
         private void SelectMenuItemExecute()
         {
-            if (this.Id == 1)
-                Application.Current.MainPage.Navigation.PushAsync(new AlbumPage());
+            /*if (this.Id == 1)
+                Application.Current.MainPage.Navigation.PushAsync(new PersonaPage());
 
             else
-                Application.Current.MainPage.Navigation.PushAsync(new AlbumesPage());
+                Application.Current.MainPage.Navigation.PushAsync(new PersonasPage());*/
+            if (this.Id == 1)
+                Application.Current.MainPage.Navigation.PushAsync(new PersonaPage());
+            if (this.Id == 2)
+                Application.Current.MainPage.Navigation.PushAsync(new PersonasPage());
+            if (this.Id == 3)
+                DelePersonaList();
         }
+
+        DBDataAccess<Persona> dataService = new DBDataAccess<Persona>();
+        private void DelePersonaList()
+        {
+            var Personass = dataService.Get().ToList();
+            dataService.DeleteList(Personass);
+        }
+
         #endregion Methods
     }
 }

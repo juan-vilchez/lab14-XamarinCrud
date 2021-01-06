@@ -41,7 +41,7 @@
             Padding="5,5,5,5"
             Margin="0,5,0,5">
             <Label
-                Text="SELECCIONE LA OPCIÓN A REALIZAR"
+                Text="SELECCIONE LA ACCIÓN A REALIZAR"
                 TextColor="White"            
                 FontSize="Medium"
                 FontAttributes="Bold"

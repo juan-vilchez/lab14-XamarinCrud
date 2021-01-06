@@ -16,8 +16,9 @@ namespace XamEFCore.DataContext
             this.DbPath = dbPath;
         }
 
-        public DbSet<Artista> Artistas { get; set; }
-        public DbSet<Album> Albumes { get; set; }
+        //public DbSet<Artista> Artistas { get; set; }
+        //        public DbSet<Album> Albumes { get; set; }
+        public DbSet<Persona> Personas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

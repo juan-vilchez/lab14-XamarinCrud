@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                xmlns:ViewModel="clr-namespace:XamEFCore.ViewModels"
+                x:Class="XamEFCore.Views.PersonaPage"
+                Title="Crear nueva Persona"
+                >
+
+    <ContentPage.BindingContext>
+        <ViewModel:PersonasViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform 
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50"/>
+            </StackLayout.Padding>
+
+            <Label 
+                Text="Nombre"/>
+            
+            <Entry 
+                Placeholder="Escribe el nombre completo"
+                Text="{Binding Nombre}"/>
+
+            <Label
+                Text="Nacimiento"/>
+            <Entry 
+                Placeholder="Fecha de nacimiento"
+                Text="{Binding Nacimiento}"/>
+
+            <Label
+                Text="Edad"/>
+            <Entry 
+                Placeholder="Ingrese la edad"
+                Text="{Binding Edad}"/>
+
+            <Label
+                Text="Es Profesional?"/>
+            <Entry 
+                Placeholder="Si/No"
+                Text="{Binding Profesional}"/>
+
+            <Button
+                Text="Guardar"
+                Command="{Binding CreateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -39,10 +39,11 @@ namespace XamEFCore.ViewModels
             this.Menu.Clear();
             this.Menu.Add(new MenuItemViewModel { Id = 1, Option = "Crear" });
             this.Menu.Add(new MenuItemViewModel { Id = 2, Option = "Lista de Registros" });
+            this.Menu.Add(new MenuItemViewModel { Id = 3, Option = "Eliminar Registros" });
         }
         #endregion Methods
 
-        DBDataAccess<Artista> dataService = new DBDataAccess<Artista>();
+        /*DBDataAccess<Artista> dataService = new DBDataAccess<Artista>();
         private void SaveArtistasList()
         {
             var artistas = new List<Artista>()
@@ -53,6 +54,6 @@ namespace XamEFCore.ViewModels
             };
 
             dataService.SaveList(artistas);
-        }
+        }*/
     }
 }
