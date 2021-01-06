@@ -42,6 +42,8 @@ namespace XamEFCore.ViewModels
                 Application.Current.MainPage.Navigation.PushAsync(new PersonasPage());
             if (this.Id == 3)
                 DelePersonaList();
+            if (this.Id == 4)
+                Application.Current.MainPage.Navigation.PushAsync(new EditPersonaPage());
         }
 
         DBDataAccess<Persona> dataService = new DBDataAccess<Persona>();

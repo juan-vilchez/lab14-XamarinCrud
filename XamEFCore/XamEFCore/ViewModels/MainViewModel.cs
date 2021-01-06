@@ -40,6 +40,7 @@ namespace XamEFCore.ViewModels
             this.Menu.Add(new MenuItemViewModel { Id = 1, Option = "Crear" });
             this.Menu.Add(new MenuItemViewModel { Id = 2, Option = "Lista de Registros" });
             this.Menu.Add(new MenuItemViewModel { Id = 3, Option = "Eliminar Registros" });
+            this.Menu.Add(new MenuItemViewModel { Id = 4, Option = "Editar Registro" });
         }
         #endregion Methods
 

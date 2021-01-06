@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              xmlns:ViewModel="clr-namespace:XamEFCore.ViewModels"
              x:Class="XamEFCore.Views.PersonasPage"
-             Title="Lista de Albumes">
+             Title="Lista de Personas">
 
     <ContentPage.BindingContext>
         <ViewModel:PersonasViewModel/>

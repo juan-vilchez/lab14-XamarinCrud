@@ -21,10 +21,6 @@ namespace XamEFCore.ViewModels
         #region Attributes
         //private ObservableCollection<Artista> artistas;
         private ObservableCollection<Persona> personas;
-        //private Artista selectedArtista;
-        /*private string titulo;
-        private double precio;
-        private int anio;*/
         private string nombre;
         private DateTime nacimiento;
         private int edad;
@@ -77,15 +73,13 @@ namespace XamEFCore.ViewModels
         #region Constructor
         public PersonasViewModel()
         {
-            //this.dataServiceArtistas = new DBDataAccess<Artista>();
             this.dataServicePersonas = new DBDataAccess<Persona>();
 
-            //this.CreateArtistas();
-
-            //this.LoadArtistas();
             this.LoadPersonas();
 
-            //this.Edad = DateTime.Now.Year;
+            this.LoadPersonasSpecific() ;
+
+
             this.Edad = 0;
 
         }
@@ -100,7 +94,6 @@ namespace XamEFCore.ViewModels
                 {
                     var newPersona = new Persona()
                     {
-                        //ArtistaID = this.SelectedArtista.ArtistaID,
                         Nombre = this.Nombre,
                         Nacimiento = this.Nacimiento,
                         Edad = this.Edad,
@@ -142,8 +135,14 @@ namespace XamEFCore.ViewModels
 
         private void LoadPersonas()
         {
-            /*var personasDB = this.dataServicePersonas.Get(null, null, "").ToList() as List<Persona>;
-            this.Personas = new ObservableCollection<Persona>(personasDB);*/
+            
+            var personasDB = this.dataServicePersonas.Get().ToList() as List<Persona>;
+            this.Personas = new ObservableCollection<Persona>(personasDB);
+        }
+
+        private void LoadPersonasSpecific()
+        {
+
             var personasDB = this.dataServicePersonas.Get().ToList() as List<Persona>;
             this.Personas = new ObservableCollection<Persona>(personasDB);
         }

@@ -1,12 +1,104 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamEFCore.Views.EditPersonaPage">
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                xmlns:ViewModel="clr-namespace:XamEFCore.ViewModels"
+                x:Class="XamEFCore.Views.EditPersonaPage"
+                Title="EDITAR DATOS DE PERSONA"
+                >
+
+        <ContentPage.BindingContext>
+        <ViewModel:PersonasViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout >
+            <StackLayout.Padding>
+                <OnPlatform 
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50"/>
+            </StackLayout.Padding>
+
+            <StackLayout>
+
+                <ListView
+                ItemsSource="{Binding Personas}"
+                HasUnevenRows="True"            
+                SeparatorVisibility="Default">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                CornerRadius="20"
+                                HasShadow="True"
+                                Margin="3">
+
+                                    <StackLayout
+                                    Orientation="Vertical">
+                                        <Grid
+                                    VerticalOptions="CenterAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+
+                                            <Label 
+                                                Grid.Row="1"
+                            Text="Nombre"/>
+
+                                            <Entry 
+                                                Grid.Row="2"
+                            Placeholder="Escribe el nuevo nombre"
+                            Text="{Binding Nombre}"/>
+
+                                            <Label
+                                                Grid.Row="3"
+                            Text="Nacimiento"/>
+                                            <Entry 
+                                                Grid.Row="4"
+                            Placeholder="Nueva fecha de nacimiento"
+                            Text="{Binding Nacimiento}"/>
+
+                                            <Label
+                                                Grid.Row="5"
+                            Text="Edad"/>
+                                            <Entry 
+                                                Grid.Row="6"
+                            Placeholder="Ingrese nueva edad"
+                            Text="{Binding Edad}"/>
+
+                                            <Label
+                                                Grid.Row="7"
+                            Text="Es Profesional?"/>
+                                            <Entry 
+                                                Grid.Row="8"
+                            Placeholder="True / False"
+                            Text="{Binding Profesional}"/>
+
+                                            <Button
+                                                Grid.Row="9"
+                            Text="Editar"
+                            Command="{Binding CreateCommand}"/>
+
+
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

@@ -15,3 +15,4 @@ C:\Users\vilchez_2\source\repos\XamEFCore\XamEFCore\XamEFCore\bin\Debug\netstand
 C:\Users\vilchez_2\source\repos\XamEFCore\XamEFCore\XamEFCore\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\vilchez_2\source\repos\XamEFCore\XamEFCore\XamEFCore\obj\Debug\netstandard2.0\Views\PersonaPage.xaml.g.cs
 C:\Users\vilchez_2\source\repos\XamEFCore\XamEFCore\XamEFCore\obj\Debug\netstandard2.0\Views\PersonasPage.xaml.g.cs
+C:\Users\vilchez_2\source\repos\XamEFCore\XamEFCore\XamEFCore\obj\Debug\netstandard2.0\Views\EditPersonaPage.xaml.g.cs
